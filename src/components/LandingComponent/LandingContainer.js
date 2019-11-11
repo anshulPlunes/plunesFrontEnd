@@ -208,357 +208,389 @@ class LandingContainer extends React.Component {
         }
 
         return <Router>
-            <div className='container'>
-                <div className='row landingTopRow'>
-                    <div className='col-md-2'>
-                    </div>
-                    <div className='col-md-8' style={{ paddingTop: '10%' }}>
-                        <center>
-                            <div className='row'>
-                                <h4 className='landingCenterHeading'>Find the best offers on Diagnotic Tests <br></br> &
-                                    Medical Procedures.</h4>
-                            </div>
-                            <div className="row">
-                                <input type="text" className="searchInput" placeholder="Name the procedure or test here..." onChange={this.onSearchQuery} >
-                                </input>
-                                <img className='searchImage' src='./search.png' alt='Search Img' height='25px' width='25px'></img>
-                                {this.state.showDiv ? <div className='row' >
-                                    <ul style={{ listStyleType: 'none' }} className='searchDropdown'>
-                                        {
-                                            this.state.showDropdown ?
-                                                this.data.map(item => (
-                                                    <li key='' data-value={item.procedure} className='row procedureListClass' onClick={this.handleClick} >
-                                                        {item.procedure}
-                                                    </li>
-                                                )) : null
-                                        }
-                                    </ul>
-                                </div> : null
+            <div class="container">
+        <div class="text-center">
+             <h1 class="h11">Find the best offer on Dignostic Tests <br></br> & Medical Procedures. </h1>
+            <form action="">
+          <div  class="autocomplete form-group">
+            <input class="form-control"  type="text" name="search" placeholder="Name the procedure or test here .." id="myInput" onChange={this.onSearchQuery} />
+            {this.state.showDiv ? <div className='row' >
+                <ul style={{ listStyleType: 'none' }} className='searchDropdown'>
+                    {
+                        this.state.showDropdown ?
+                            this.data.map(item => (
+                                <li key='' data-value={item.procedure} className='row procedureListClass' onClick={this.handleClick} >
+                                    {item.procedure}
+                                </li>
+                            )) : null
+                    }
+                </ul>
+            </div> : null
 
-                                }
+            }
+            {
+                this.state.showSelectedProcedures ? <div className='row selectedProceduresList'>
+                    <ul style={{ listStyleType: 'none' }} >
+                        {
+                            this.showForm ? <form onSubmit={this.handleSubmit}>
                                 {
-                                    this.state.showSelectedProcedures ? <div className='row selectedProceduresList'>
-                                        <ul style={{ listStyleType: 'none' }} >
-                                            {
-                                                this.showForm ? <form onSubmit={this.handleSubmit}>
-                                                    {
-                                                        this.state.selectedData.map(item =>
-                                                            (
-                                                                <li key='' className='row procedureListClass'>{item}</li>
-                                                            ))
-                                                    }
-
-                                                </form> : null
-                                            }
-                                        </ul>
-                                    </div> : null
-                                }
-                                {
-                                    this.showForm ?
-                                        <button type='button' className='btn btn-success proceedButton' onClick={this.sendToSignUpPage}> Proceed </button>
-                                        : null
+                                    this.state.selectedData.map(item =>
+                                        (
+                                            <li key='' className='row procedureListClass'>{item}</li>
+                                        ))
                                 }
 
+                            </form> : null
+                        }
+                    </ul>
+                </div> : null
+            }
+            {
+                this.showForm ?
+                    <button type='button' className='btn btn-success proceedButton' onClick={this.sendToSignUpPage}> Proceed </button>
+                    : null
+            }
 
-                            </div>
-                        </center>
-                    </div>
+          </div>
+            </form>
 
+        </div>
+    </div>
+    
+  <div style={{backgroundColor: '#f2f2f2'}}>
+           <div style={{paddingTop: '1px'}}> <h3 class="header"> Avail upto 50% of on Medical
+              procedures, diagnostics & appointments. 
+               </h3></div>
+        <div class="main-content">
+    <div id="owl-demo" class = 'row cardItemsRow owl-carousel owl-theme'>
+        <div class="item">
+            <div class="card bg-light" style={{width: '18rem'}}>
+                <img src="Dentist.png" class="card-img-top" alt="..." />
+                <div class="card-body carousel-text">
+                  <h5 class="card-title carousel-header">Dentist</h5>
+                  <p class="card-text">Root canal Treatment (TCT)<br></br>Teeth whitening<br></br>Scaling & Polishing Dentel Filling..</p>
+                  <a href="#" class="btn btn-primary button-view">view more</a>
                 </div>
-                <hr style={{ marginTop: '120px' }}></hr>
-                <div className='row ' style={{ paddingTop: '40px' }}>
-                    <div className='row '>
-                        <center>
-                            <h4 className='discountHeading'>
-                                Avail upto 50% off on medical procedures,<br></br>
-                                diagnostics & appointments.
-                            </h4>
-                        </center>
-                    </div>
-                    {/* <div className='row'> */}
-                    <div id="owl-demo">
-
-                        <div class="item"><img src="./Dentist.png" height = '50px' width = '50px' alt="Owl Image" /></div>
-                        <div class="item"><img src="./Dentist.png" alt="Owl Image" height = '50px' width = '50px' /></div>
-                        <div class="item"><img src="./Dentist.png" alt="Owl Image" height = '50px' width = '50px' /></div>
-                        <div class="item"><img src="./Dentist.png" alt="Owl Image"  height = '50px' width = '50px'/></div>
-                        <div class="item"><img src=".Dentist.png" alt="Owl Image"  height = '50px' width = '50px'/></div>
-                        <div class="item"><img src="./Dentist.png" alt="Owl Image" height = '50px' width = '50px'/></div>
-                    </div>
-
-                    <div id="demo" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./Dentist.png" height='295px' width='320px' /><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Orthopedics.png" height='295px' width='320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Dentist</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Root Canal Treatment (RCT) <br></br>
-                                            Teeth Whitening <br></br>
-                                            Scaling & Polishing Dental Filling ...
-                                        </p>
-                                        <button className='viewMoreButton' >View More</button>
-                                    </div>
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Orthopedics</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Spinal Fusion Surgery <br></br>
-                                            Arthroplasty <br></br>
-                                            Bone Grafting ...
-                                        </p>
-                                        <button className='viewMoreButton' >View More</button>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./Allergist.png" height= '295px' width = '320px'/><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Cardiologist.png" height= '295px' width = '320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style = {{marginTop : '20px', marginLeft : '20px'}}>
-                                        <h5 style={{ fontSize: '30px' }}>Allergists</h5>
-                                        <p style={{color : '#7e7e7e', fontSize: '23px'}}>Root Canal Treatment (RCT) <br></br>
-                                            Teeth Whitening <br></br>
-                                            Scaling & Polishing Dental Filling ...
-                                        </p>
-                                        <button className = 'viewMoreButton' >View More</button>
-                                    </div>
-                                    <div class="col" style = {{marginTop : '20px' , marginLeft : '20px'}}>
-                                    <h5 style={{ fontSize: '30px' }}>Cardiologists</h5>
-                                    <p style={{color : '#7e7e7e', fontSize: '23px'}}>Root Canal Treatment (RCT) <br></br>
-                                            Teeth Whitening <br></br>
-                                            Scaling & Polishing Dental Filling ...
-                                        </p>
-                                        <button className = 'viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div> */}
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./Dermatologist.png" height='295px' width='320px' /><br></br>
-                                    </div>
-
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Gynaecologist.png" height='295px' width='320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Dermatologists</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Botox Treatment <br></br>
-                                            Anti-Aging Treatment <br></br>
-                                            Skin Boosters & Fillers ...
-                                        </p>
-                                        <button className='viewMoreButton' >View More</button>
-                                    </div>
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Gynaecologist</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Cervical Amputation <br></br>
-                                            Viginal Hysterectomy <br></br>
-                                            Cyst Removal ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./General_physician.png" height= '295px' width = '320px'/><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Gynaecologist.png" height= '295px' width = '320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style = {{marginTop : '20px', marginLeft : '20px'}}>
-                                        <h5 style={{ fontSize: '30px' }}>General Physician</h5>
-                                        <p style={{color : '#7e7e7e', fontSize: '23px'}}>Root Canal Treatment (RCT) <br></br>
-                                            Teeth Whitening <br></br>
-                                            Scaling & Polishing Dental Filling ...
-                                        </p>
-                                        <button className = 'viewMoreButton' >View More</button>
-                                    </div>
-                                    <div class="col" style = {{marginTop : '20px', marginLeft : '20px'}}>
-                                    <h5 style={{ fontSize: '30px' }}>Gynaecologist</h5>
-                                    <p style={{color : '#7e7e7e', fontSize: '23px'}}>Cervical Amputation <br></br>
-                                            Viginal Hysterectomy <br></br>
-                                            Cyst Removal ...
-                                        </p>
-                                        <button className = 'viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div> */}
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./PSYCHIATRISTS.png" height='295px' width='320px' />
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Neurologist.png" height='295px' width='320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Psychiatrists</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Autism Assessment <br></br>
-                                            Stress Management <br></br>
-                                            Conduct Disorder ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Neurologist</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Surgical Cliping <br></br>
-                                            Chemotherapy <br></br>
-                                            Brain Tumor Surgery ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./OPHTHAMOLOGIST.png" height='295px' width='320px' /><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Pathology.png" height='295px' width='320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Opthamalogist</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Micro Incision Surgery <br></br>
-                                            Ptosis Surgery <br></br>
-                                            Corneal Tear Repair ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Pathology</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Ammonia Blood Test <br></br>
-                                            Montaux Test <br></br>
-                                            Pregnancy Test ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./PEDIATRICIAN.png" height='295px' width='320px' /><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./Physiotherapy.png" height='295px' width='320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Pediatrician</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Heart Murmur Treatment <br></br>
-                                            Hip Examination <br></br>
-                                            Venipuncture ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Physiotherapy</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Electrotherapy <br></br>
-                                            Laser Therapy <br></br>
-                                            Fitting of Orthosis ...
-                                        </p>
-                                        <button className='viewMoreButton' >View More</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./RADIOLOGIST.png" height='295px' width='320px' /><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./PSYCHIATRISTS.png" height='295px' width='320px' />
-                                    </div>
-                                </div>
-                                <div class="row">
-
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Radiologists</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>X-RAY Ankle AP <br></br>
-                                            MRI Abdomen <br></br>
-                                            USG Breast One Sided ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                    <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
-                                        <h5 style={{ fontSize: '25px' }}>Psychiatrists</h5>
-                                        <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Autism Assessment <br></br>
-                                            Stress Management <br></br>
-                                            Conduct Disorder ...
-                                        </p>
-                                        <button className='viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div>
-                            {/* <div class="carousel-item">
-                                <div class="row">
-                                    <div class="col" style={{ paddingLeft: '30px' }}>
-                                        <img src="./RADIOLOGIST.png" height= '295px' width = '320px'/><br></br>
-                                    </div>
-                                    <div class="col" style={{ paddingRight: '30px' }}>
-                                        <img src="./VETERINARY.png" height= '295px' width = '320px'/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col" style = {{marginTop : '20px', marginLeft : '20px'}}>
-                                        <h5 style={{ fontSize: '30px' }}>Radiologists</h5>
-                                        <p style={{color : '#7e7e7e', fontSize: '23px'}}>X-RAY Ankle AP <br></br>
-                                            MRI Abdomen <br></br>
-                                            USG Breast One Sided ...
-                                        </p>
-                                        <button className = 'viewMoreButton'>View More</button>
-                                    </div>
-                                    <div class="col" style = {{marginTop : '20px', marginLeft : '20px'}}>
-                                    <h5 style={{ fontSize: '30px' }}>Veterinary</h5>
-                                    <p style={{color : '#7e7e7e', fontSize: '23px'}}>Root Canal Treatment (RCT) <br></br>
-                                            Teeth Whitening <br></br>
-                                            Scaling & Polishing Dental Filling ...
-                                        </p>
-                                        <button className = 'viewMoreButton'>View More</button>
-                                    </div>
-                                </div>
-                            </div> */}
-
-                        </div>
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                            <span><img src='./arrow_left.png' alt='...' height='40px' width='40px'></img></span>
-                        </a>
-                        <a class="carousel-control-next" href="#demo" data-slide="next">
-                            {/* <span class="carousel-control-next-icon"   style={{color : 'grey'}}></span> */}
-                            <img src='./arrow_right.png' alt='...' height='40px' width='40px'></img>
-                        </a>
-                    </div>
+              </div>
+        </div>
+        <div class="item">
+            <div class="card bg-light" style={{width: '18rem'}}>
+                <img src="orp.png" class="card-img-top" alt="..." />
+                <div class="card-body carousel-text">
+                  <h5 class="card-title carousel-header">Orthopedics</h5>
+                  <p class="card-text">Root canal Treatment (TCT)<br></br>Teeth whitening<br></br>Scaling & Polishing Dentel Filling..</p>
+                  <a href="#" class="btn btn-primary button-view">view more</a>
                 </div>
+              </div>
+        
+        </div>
+      
+        <div class="item">
+            <div class="card bg-light" style={{width: '18rem'}}>
+                <img src="Dentist.png" class="card-img-top" alt="..." />
+                <div class="card-body carousel-text">
+                  <h5 class="card-title carousel-header">Dermatologists</h5>
+                  <p class="card-text">Root canal Treatment (TCT)<br></br>Teeth whitening<br></br>Scaling & Polishing Dentel Filling..</p>
+                  <a href="#" class="btn btn-primary button-view">view more</a>
+                </div>
+              </div>
+        
+        </div>
+       
+        <div class="item">
+            <div class="card bg-light" style={{width: '18rem'}}>
+                <img src="Dentist.png" class="card-img-top" alt="..." />
+                <div class="card-body carousel-text">
+                  <h5 class="card-title carousel-header">Gynaecologist</h5>
+                  <p class="card-text">Root canal Treatment (TCT)<br></br>Teeth whitening<br></br>Scaling & Polishing Dentel Filling..</p>
+                  <a href="#" class="btn btn-primary button-view">view more</a>
+                </div>
+              </div>
+        </div>
+      
+        <div class="item">
+            <div class="card bg-light " style={{width: '18rem'}}>
+                <img src="Dentist.png" class="card-img-top" alt="..." />
+                <div class="card-body carousel-text">
+                  <h5 class="card-title carousel-header">Psychiatrists</h5>
+                  <p class="card-text">Root canal Treatment (TCT)<br></br>Teeth whitening<br></br>Scaling & Polishing Dentel Filling...</p>
+                  <a href="#" class="btn btn-primary button-view">view more</a>
+                </div>
+                
+              </div>
+            
+        </div>
+        </div>
+            <div // <div className='container'> */}
+class="owl-theme">
+        <div class="owl-controls">
+            <div class="custom-nav owl-nav"></div>
+            
+        </div>
+    </div>
+    </div>
+    </div>
+  
 
-                <hr className='hrClass'></hr>
-            </div>
+           
         </Router>
     }
 }
 
 export default LandingContainer
+
+{/* // <div className='container'> */}
+{/* <div className='row landingTopRow'>
+<div className='col-md-2'>
+</div>
+<div className='col-md-8' style={{ paddingTop: '10%' }}>
+    <center>
+        <div className='row'>
+            <h4 className='landingCenterHeading'>Find the best offers on Diagnotic Tests <br></br> &
+                Medical Procedures.</h4>
+        </div>
+        <div className="row">
+            <input type="text" className="searchInput" placeholder="Name the procedure or test here..." onChange={this.onSearchQuery} >
+            </input>
+            <img className='searchImage' src='./search.png' alt='Search Img' height='25px' width='25px'></img>
+            {this.state.showDiv ? <div className='row' >
+                <ul style={{ listStyleType: 'none' }} className='searchDropdown'>
+                    {
+                        this.state.showDropdown ?
+                            this.data.map(item => (
+                                <li key='' data-value={item.procedure} className='row procedureListClass' onClick={this.handleClick} >
+                                    {item.procedure}
+                                </li>
+                            )) : null
+                    }
+                </ul>
+            </div> : null
+
+            }
+            {
+                this.state.showSelectedProcedures ? <div className='row selectedProceduresList'>
+                    <ul style={{ listStyleType: 'none' }} >
+                        {
+                            this.showForm ? <form onSubmit={this.handleSubmit}>
+                                {
+                                    this.state.selectedData.map(item =>
+                                        (
+                                            <li key='' className='row procedureListClass'>{item}</li>
+                                        ))
+                                }
+
+                            </form> : null
+                        }
+                    </ul>
+                </div> : null
+            }
+            {
+                this.showForm ?
+                    <button type='button' className='btn btn-success proceedButton' onClick={this.sendToSignUpPage}> Proceed </button>
+                    : null
+            }
+
+
+        </div>
+    </center>
+</div>
+
+</div>
+<hr style={{ marginTop: '120px' }}></hr>
+<div className='row ' style={{ paddingTop: '40px' }}>
+<div className='row '>
+    <center>
+        <h4 className='discountHeading'>
+            Avail upto 50% off on medical procedures,<br></br>
+            diagnostics & appointments.
+        </h4>
+    </center>
+</div>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="row">
+                <div class="col" style={{ paddingLeft: '30px' }}>
+                    <img src="./Dentist.png" height='295px' width='320px' /><br></br>
+                </div>
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./Orthopedics.png" height='295px' width='320px' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Dentist</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Root Canal Treatment (RCT) <br></br>
+                        Teeth Whitening <br></br>
+                        Scaling & Polishing Dental Filling ...
+                    </p>
+                    <button className='viewMoreButton' >View More</button>
+                </div>
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Orthopedics</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Spinal Fusion Surgery <br></br>
+                        Arthroplasty <br></br>
+                        Bone Grafting ...
+                    </p>
+                    <button className='viewMoreButton' >View More</button>
+                </div>
+            </div>
+        </div>
+       
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col" style={{ paddingLeft: '30px' }}>
+                    <img src="./Dermatologist.png" height='295px' width='320px' /><br></br>
+                </div>
+
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./Gynaecologist.png" height='295px' width='320px' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Dermatologists</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Botox Treatment <br></br>
+                        Anti-Aging Treatment <br></br>
+                        Skin Boosters & Fillers ...
+                    </p>
+                    <button className='viewMoreButton' >View More</button>
+                </div>
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Gynaecologist</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Cervical Amputation <br></br>
+                        Viginal Hysterectomy <br></br>
+                        Cyst Removal ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+            </div>
+        </div>
+
+      
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./PSYCHIATRISTS.png" height='295px' width='320px' />
+                </div>
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./Neurologist.png" height='295px' width='320px' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Psychiatrists</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Autism Assessment <br></br>
+                        Stress Management <br></br>
+                        Conduct Disorder ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Neurologist</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Surgical Cliping <br></br>
+                        Chemotherapy <br></br>
+                        Brain Tumor Surgery ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col" style={{ paddingLeft: '30px' }}>
+                    <img src="./OPHTHAMOLOGIST.png" height='295px' width='320px' /><br></br>
+                </div>
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./Pathology.png" height='295px' width='320px' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Opthamalogist</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Micro Incision Surgery <br></br>
+                        Ptosis Surgery <br></br>
+                        Corneal Tear Repair ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Pathology</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Ammonia Blood Test <br></br>
+                        Montaux Test <br></br>
+                        Pregnancy Test ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col" style={{ paddingLeft: '30px' }}>
+                    <img src="./PEDIATRICIAN.png" height='295px' width='320px' /><br></br>
+                </div>
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./Physiotherapy.png" height='295px' width='320px' />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Pediatrician</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Heart Murmur Treatment <br></br>
+                        Hip Examination <br></br>
+                        Venipuncture ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Physiotherapy</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Electrotherapy <br></br>
+                        Laser Therapy <br></br>
+                        Fitting of Orthosis ...
+                    </p>
+                    <button className='viewMoreButton' >View More</button>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col" style={{ paddingLeft: '30px' }}>
+                    <img src="./RADIOLOGIST.png" height='295px' width='320px' /><br></br>
+                </div>
+                <div class="col" style={{ paddingRight: '30px' }}>
+                    <img src="./PSYCHIATRISTS.png" height='295px' width='320px' />
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Radiologists</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>X-RAY Ankle AP <br></br>
+                        MRI Abdomen <br></br>
+                        USG Breast One Sided ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+                <div class="col" style={{ marginTop: '20px', marginLeft: '20px' }}>
+                    <h5 style={{ fontSize: '25px' }}>Psychiatrists</h5>
+                    <p style={{ color: '#7e7e7e', fontSize: '20px' }}>Autism Assessment <br></br>
+                        Stress Management <br></br>
+                        Conduct Disorder ...
+                    </p>
+                    <button className='viewMoreButton'>View More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+        <span><img src='./arrow_left.png' alt='...' height='40px' width='40px'></img></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+        <img src='./arrow_right.png' alt='...' height='40px' width='40px'></img>
+    </a>
+</div>
+</div>
+
+<hr className='hrClass'></hr>
+</div> */}
